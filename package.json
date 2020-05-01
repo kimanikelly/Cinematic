@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/kimanikelly/Cinematic/issues"
   },
-  "homepage": "https://github.com/kimanikelly/Cinematic#readme"
+  "homepage": "https://github.com/kimanikelly/Cinematic#readme",
+  "dependencies": {
+    "nodemon": "^2.0.3"
+  }
 }
