@@ -1,7 +1,3 @@
-// Loads the path module
-// path module used to read directories and file paths
-var path = require('path');
-
 // Loads environment variables from the .env file into process.env
 // Configures the dotenv module
 require('dotenv').config();
@@ -30,14 +26,6 @@ require('./app/routing/api-routes')(app);
 
 // Imports the html-routes and given access to Express
 require('./app/routing/html-routes')(app);
-
-axios.get('https://api.themoviedb.org/3/movie/550?api_key='+apiKey)
-    .then(function (res) {
-        console.log(res.data);
-    })
-    .catch(function (err) {
-        console.log(err);
-    })
 
 // Starts the server running on the defined port
 app.listen(PORT, function () {
