@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/kimanikelly/Cinematic#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "nodemon": "^2.0.3"
   }
 }
