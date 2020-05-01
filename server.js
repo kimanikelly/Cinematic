@@ -12,11 +12,7 @@ var apiCredentials = require('./api-credentials');
 // Stores the value of the Fandango apiKey
 var apiKey = apiCredentials['apiKey'];
 
-// Stores the value of the Fandango apiSecret
-var apiSecret = apiCredentials['apiSecret'];
-
-// Stores the value of the Fandango callbackUrl
-var callbackUrl = apiCredentials['callbackUrl'];
+var axios = require('axios');
 
 // Loads the Express module
 // Express is a Node.js web application framework
@@ -26,14 +22,22 @@ var express = require('express');
 // Initializes Express and stores it in the variable app
 var app = express();
 
+// Defines the port the Express server will run on
+var PORT = process.env.PORT || 3000;
+
 // Imports the api-routes and given access to Express
 require('./app/routing/api-routes')(app);
 
 // Imports the html-routes and given access to Express
 require('./app/routing/html-routes')(app);
 
-// Defines the port the Express server will run on
-var PORT = process.env.PORT || 3000;
+axios.get('https://api.themoviedb.org/3/movie/550?api_key='+apiKey)
+    .then(function (res) {
+        console.log(res.data);
+    })
+    .catch(function (err) {
+        console.log(err);
+    })
 
 // Starts the server running on the defined port
 app.listen(PORT, function () {
