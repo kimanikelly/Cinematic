@@ -10,4 +10,7 @@ require('dotenv').config();
 var apiCredentials = require('./apiCredentials');
 
 // Stores the value of the Fandango apiKey
-var apiKey = apiCredentials['apiKey'];
+var ap
+// Stores the value of the Fandango apiSecret
+var apiSecret = apiCredentials['apiSecret'];
+
