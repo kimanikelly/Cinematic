@@ -6,6 +6,8 @@ var path = require('path');
 // Configures the dotenv module
 require('dotenv').config();
 
+// Imports the Fandango credentials from apiCredentials.js 
 var apiCredentials = require('./apiCredentials');
 
-console.log(apiCredentials);
+// Stores the value of the Fandango apiKey
+var apiKey = apiCredentials['apiKey'];
