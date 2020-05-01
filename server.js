@@ -2,14 +2,6 @@
 // Configures the dotenv module
 require('dotenv').config();
 
-// Imports the Fandango credentials from apiCredentials.js 
-var apiCredentials = require('./api-credentials');
-
-// Stores the value of the Fandango apiKey
-var apiKey = apiCredentials['apiKey'];
-
-var axios = require('axios');
-
 // Loads the Express module
 // Express is a Node.js web application framework
 // Will provide the HTTP server and HTTP routing
