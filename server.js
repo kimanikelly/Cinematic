@@ -26,4 +26,9 @@ var express = require('express');
 // Initializes Express and stores it in the variable app
 var app = express();
 
+// Defines the port the Express server will run on
+var PORT = process.env.PORT || 3000;
+
+
+
 
