@@ -18,9 +18,12 @@ var apiSecret = apiCredentials['apiSecret'];
 // Stores the value of the Fandango callbackUrl
 var callbackUrl = apiCredentials['callbackUrl'];
 
-// Loads the express module
+// Loads the Express module
 // Express is a Node.js web application framework
 // Will proved the HTTP server and HTTP routing
 var express = require('express');
+
+// Initializes Express and stores it in the variable app
+var app = express();
 
 
