@@ -29,6 +29,11 @@ var app = express();
 // Defines the port the Express server will run on
 var PORT = process.env.PORT || 3000;
 
+// Starts the server running on the defined port
+app.listen(PORT, function () {
+    console.log("Express server running on port: " + PORT);
+})
+
 
 
 
