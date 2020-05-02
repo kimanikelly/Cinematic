@@ -47,10 +47,7 @@ $(document).ready(() => {
 
                 // Sets the value of the overview
                 overview = res.results[0].overview;
-
-                console.log(res.results[0])
-
-                console.log(posterPath + res.results[0].poster_path);
+  
                 $('#movie-title').html(movieTitle);
                 $('#release-date').html(releaseDate);
                 $('img').attr('src', posterPath + res.results[0].poster_path);
@@ -62,5 +59,8 @@ $(document).ready(() => {
             });
 
     });
+
+
+    
 
 });
