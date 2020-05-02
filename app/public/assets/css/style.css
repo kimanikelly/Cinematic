@@ -62,7 +62,9 @@ h3:hover {
 }
 
 #movie-query-title {
+    font-size:35px;
     margin-top:5px;
+    height:60px;
     width:65%;
     font-family:'Times New Roman', Times, serif;
 }
