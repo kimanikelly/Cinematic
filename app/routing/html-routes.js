@@ -4,10 +4,14 @@ var path = require('path');
 
 module.exports = function (app) {
 
-    // GET route used to display index.html page
+    // GET route used to render index.html
     app.get('/', function (req, res) {
         res.sendFile(path.join(__dirname, '../public/index.html'))
     });
 
+    // GET route used to render shows.html
+    app.get('/shows',function(req,res){
+        res.sendFile(path.join(__dirname, '../public/shows.html'));
+    })
 
 }

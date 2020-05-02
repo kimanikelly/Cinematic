@@ -11,7 +11,7 @@ var express = require('express');
 var app = express();
 
 // Defines the port the Express server will run on
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 5000;
 
 // Imports the api-routes and given access to Express
 require('./app/routing/api-routes')(app);
