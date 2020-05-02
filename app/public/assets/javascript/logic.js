@@ -21,7 +21,7 @@ $(document).ready(() => {
     $('#movie-submit').click(() => {
 
         // The queryTitle is given the value of the movie name input
-        var queryTitle = $('#query-title').val();
+        var queryTitle = $('#movie-query-title').val();
 
         // The movieTitle will store the value of the movie title returned from the API search
         var movieTitle;
@@ -32,35 +32,45 @@ $(document).ready(() => {
         // The overview will store the value of the overview returned from the API search
         var overview;
 
+        // The posterPath will store the first half if movie image path
+        // The poster path returned from the Get AJAX Get route will concat to this path
         var posterPath = 'https://image.tmdb.org/t/p/w500';
 
-        // AJAX Get request to search for a movie that was input
+        // AJAX Get request to search for a movie that was input field
         // The apiKey and queryTitle variables are used to complete the query string
         $.get('https://api.themoviedb.org/3/search/movie?api_key=' +
             apiKey + '&language=en-US&query=' + queryTitle + '&page=1&include_adult=false', (res) => {
 
                 // Sets the value of the movieTitle
-                movieTitle = res.results[0].title
+                movieTitle = res.results[0].title;
 
                 // Sets the value of the releaseDate
                 releaseDate = res.results[0].release_date;
 
                 // Sets the value of the overview
                 overview = res.results[0].overview;
-  
+
+                console.log(movieTitle)
+                // Sets the movie title in the browser page
                 $('#movie-title').html(movieTitle);
+
+                // Sets the release date in the browser page
                 $('#release-date').html(releaseDate);
+
+                // Sets the movie image in the browser page
                 $('img').attr('src', posterPath + res.results[0].poster_path);
+
+                // Sets the movie overview in the browser page
                 $('#overview').html(overview);
 
-                // Clears the movie input on click
-                $('#query-title').val("");
+                // Clears the movie input field on click
+                $('#movie-query-title').val("");
 
             });
 
     });
 
 
-    
+
 
 });
