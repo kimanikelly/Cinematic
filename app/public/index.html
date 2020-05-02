@@ -2,7 +2,7 @@
 <html lang='en'>
 
 <head>
-    <title>Cinematic | Home</title>
+    <title>Cinematic | Movie Search</title>
     <!-- Jquery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- logic.js-->
@@ -17,21 +17,40 @@
 
 <body>
 
+    <h1 id='cinematic'>Cinematic</h1>
 
-    <nav class="navbar navbar-light bg-light">
-        <ul>
-            <li><a href=''>Movies</a></li>
-            <li>TV Shows</li>
-        </ul>
+    <div class='container' id='directory'>
+        <div class="row">
+            <div class="col-sm">
+                <a href='/'>
+                    <h3>Movie Search
+                </a></h3>
+            </div>
+            <div class="col-sm">
+                <h3>Show Search</h3>
+            </div>
+            <div class="col-sm">
+                <h3>Trending</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class='container'>
+        <div id='search-div'>
+            <input type="text" class="form-control" id="query-title" placeholder="Search Movie...">
+            <button type="submit" class="btn btn-primary" id='movie-submit'>Submit</button>
+        </div>
+
+        <h2 id='movie-title'></h2>
+        <h2 id='release-date'></h2>
+        <p id='overview'></p>
+
+    </div>
+
+
+    <nav class="navbar fixed-bottom navbar-light bg-light">
+        <a class="navbar-brand" href="#">Fixed bottom</a>
     </nav>
-
-    <input type="text" class="form-control" id="query-title" placeholder="Search Movie...">
-    <button type="submit" class="btn btn-primary" id='movie-submit'>Submit</button>
-
-    <h1 id='movie-title'></h1>
-    <h1 id='release-date'></h1>
-    <p id='overview'></p>
-
 </body>
 
 </html>

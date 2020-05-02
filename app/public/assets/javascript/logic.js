@@ -1,6 +1,6 @@
 
 // Detects the state of the state of the DOM before JavaScript code is executed
-$(document).ready(function () {
+$(document).ready(() => {
 
     // The undefined apiKey variable will store the value of the apiKey
     var apiKey;

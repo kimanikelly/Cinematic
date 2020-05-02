@@ -1,7 +1,9 @@
-
+body {
+    background-color: lightslategray;
+}
 #cinematic {
     text-transform: uppercase;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:'Times New Roman', Times, serif;
     font-weight: bold;;
     font-size:60px;
     text-align:center;
@@ -24,7 +26,15 @@
 
 h3 {
     font-weight: bold;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:'Times New Roman', Times, serif;
+}
+
+h2 {
+    text-align:center;
+}
+
+h3:hover {
+    text-decoration: underline;
 }
 
 .container {
@@ -39,6 +49,20 @@ h3 {
 }
 
 #query-title {
-    width:20%;
+    margin-top:5px;
+    width:65%
 }
 
+#search-div {
+    margin-left:28%;
+}
+
+p {
+    margin-top: 5%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:20px;
+}
+
+.fixed-bottom {
+    border-top:3px solid black
+}
