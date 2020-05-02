@@ -32,6 +32,8 @@ $(document).ready(() => {
         // The overview will store the value of the overview returned from the API search
         var overview;
 
+        var posterPath = 'https://image.tmdb.org/t/p/w500';
+
         // AJAX Get request to search for a movie that was input
         // The apiKey and queryTitle variables are used to complete the query string
         $.get('https://api.themoviedb.org/3/search/movie?api_key=' +
@@ -48,14 +50,17 @@ $(document).ready(() => {
 
                 console.log(res.results[0])
 
+                console.log(posterPath + res.results[0].poster_path);
                 $('#movie-title').html(movieTitle);
                 $('#release-date').html(releaseDate);
+                $('img').attr('src', posterPath + res.results[0].poster_path);
                 $('#overview').html(overview);
 
                 // Clears the movie input on click
                 $('#query-title').val("");
 
             });
+
     });
 
 });
