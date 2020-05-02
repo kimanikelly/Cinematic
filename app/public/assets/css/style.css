@@ -46,14 +46,14 @@ h2 {
 h3:hover {
     text-decoration: underline;
     text-decoration-color: lightcoral;
-    color:lightblue;
+    color:skyblue;
 }
 
 .container {
     margin-top:5%;
     margin-left:20%;
     margin-bottom:10%;
-    border:5px solid darkmagenta;
+    border:5px solid rgba(4, 134, 185, 0.877);
     height: auto;
     width:800px;
     border-radius:20px;
@@ -112,7 +112,7 @@ p {
   }
 
 .footer {
-    border-top:3px solid  lightcoral;
+    border-top:5px solid skyblue;
 }
 
 
