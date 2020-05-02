@@ -53,7 +53,7 @@ h3:hover {
     font-family:'Times New Roman', Times, serif;
 }
 
-#movie-search-div {
+.movie-search-div {
     margin-left:28%;
     margin-top:8%;
 }
