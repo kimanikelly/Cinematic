@@ -1,16 +1,16 @@
 body {
-    background-color: whitesmoke;
+    background-image: url('../images/ep_naturalblack.png');
 }
+
+
 #cinematic {
     text-transform: uppercase;
     font-family:'Times New Roman', Times, serif;
     font-weight: bold;;
     font-size:60px;
     text-align:center;
-    text-shadow: 0px 3px 0px #b2a98f,
-    0px 14px 10px rgba(0,0,0,0.15),
-    0px 24px 2px rgba(0,0,0,0.1),
-    0px 24px 30px rgba(0,0,0,0.1);
+    color:lightcoral;
+
 }
 
 #directory {
@@ -22,28 +22,42 @@ body {
 
 }
 
+a {
+    color:inherit;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
 h3 {
     font-weight: bold;
     font-family:'Times New Roman', Times, serif;
+    color:whitesmoke;
     
 }
 
 h2 {
     text-align:center;
+    font-weight: bold;
 }
 
 h3:hover {
     text-decoration: underline;
+    text-decoration-color: lightcoral;
+    color:lightblue;
 }
 
 .container {
     margin-top:5%;
     margin-left:20%;
     margin-bottom:10%;
-    border:5px solid plum;
+    border:5px solid darkmagenta;
     height: auto;
     width:800px;
     border-radius:20px;
+    background-color: whitesmoke;
     
 }
 
@@ -64,10 +78,18 @@ h3:hover {
 
 #movie-submit {
     font-family: 'Times New Roman', Times, serif;
+    font-size:25px;
     text-transform: bold;
     border-radius:20px;
+    width:50%;
     margin-top:10px;
-    margin-left:25%;
+    margin-left:8%;
+    background-color: lightslategray;
+    
+}
+
+#movie-submit:hover {
+    color:lightcoral;
 }
 
 img {
@@ -87,7 +109,7 @@ p {
   }
 
 .footer {
-    border-top:3px solid black
+    border-top:3px solid  lightcoral;
 }
 
 

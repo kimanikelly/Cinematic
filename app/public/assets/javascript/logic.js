@@ -19,7 +19,7 @@ $(document).ready(() => {
 
     // Jquery on click method used to perform the movie search from TMDB API
     $('#movie-submit').click(() => {
-
+       
         // The queryTitle is given the value of the movie name input
         var queryTitle = $('#movie-query-title').val();
 
@@ -50,7 +50,6 @@ $(document).ready(() => {
                 // Sets the value of the overview
                 overview = res.results[0].overview;
 
-                console.log(movieTitle)
                 // Sets the movie title in the browser page
                 $('#movie-title').html(movieTitle);
 
@@ -59,6 +58,9 @@ $(document).ready(() => {
 
                 // Sets the movie image in the browser page
                 $('img').attr('src', posterPath + res.results[0].poster_path);
+
+                // Sets the border of the image
+                $('img').css('border', '2px solid black');
 
                 // Sets the movie overview in the browser page
                 $('#overview').html(overview);
