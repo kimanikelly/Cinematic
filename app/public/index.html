@@ -17,8 +17,11 @@
 
 <body>
 
+    <!-- Heading -->
     <h1 id='cinematic'>Cinematic</h1>
+    <!-- Heading -->
 
+    <!-- Page Directory -->
     <div class='container' id='directory'>
         <div class="row">
             <div class="col-sm">
@@ -34,21 +37,33 @@
             </div>
         </div>
     </div>
+    <!-- Page Directory -->
 
+    <!-- Movie Search -->
     <div class='container'>
-        <div id='search-div'>
-            <input type="text" class="form-control" id="query-title" placeholder="Search Movie...">
+        <div id='movie-search-div'>
+            <input type="text" class="form-control" id="movie-query-title" placeholder="Search movie...">
             <button type="submit" class="btn btn-primary" id='movie-submit'>Submit</button>
         </div>
 
-        <h2 id='movie-title'></h2>
-        <h2 id='release-date'></h2>
-        <p id='overview'></p>
+        <div id='movie-info-div'>
+            <h2 id='movie-title'></h2>
+            <h2 id='release-date'></h2>
+            <img src=''/>
+            <p id='overview'></p>
+        </div>
+    </div>
+    <!-- Movie Search -->
 
+    <div class='container' id='now-playing'>
+        <div id='search-div'>
+            <input type="text" class="form-control" id="query-title" placeholder="Search movies now playing...">
+            <button type="submit" class="btn btn-primary" id='movie-submit'>Submit</button>
+        </div>
     </div>
 
 
-    <nav class="navbar fixed-bottom navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">Fixed bottom</a>
     </nav>
 </body>
