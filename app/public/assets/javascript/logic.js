@@ -98,6 +98,8 @@ $(document).ready(() => {
 
     $('#show-submit').click(() => {
 
+        var showQueryTitle = $('show-query-title').val();
+
         // The showTitle will store the value of the show title returned from the API search
         var showTitle;
         var airDate;
@@ -105,7 +107,7 @@ $(document).ready(() => {
         var showOverView;
 
         $.get('https://api.themoviedb.org/3/search/tv?api_key=' +
-            apiKey + '&language=en-US&page=1&query=Silicon%20Valley&include_adult=false', (res) => {
+            apiKey + '&language=en-US&page=1&query=' + showQueryTitle + '&include_adult=false', (res) => {
 
                 console.log(res.results[0]);
 
