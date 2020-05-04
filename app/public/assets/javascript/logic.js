@@ -113,8 +113,14 @@ $(document).ready(() => {
                 console.log(showQueryTitle)
 
                 showTitle = res.results[0].name;
+                airDate = res.results[0].first_air_date;
 
                 $('#show-title-span').append(showTitle);
+                $('#show-air-span').append(airDate);
+
+
+
+                $('#show-query-title').val('');
             });
     })
 
