@@ -120,6 +120,7 @@ p {
 
 .footer {
     border-top:5px solid lightcoral;
+    background-image: url('../images/concrete_wall.png');
 }
 
 
