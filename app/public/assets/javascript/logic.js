@@ -35,6 +35,12 @@ $(document).ready(() => {
         // The overview will store the value of the overview returned from the API search
         var overview;
 
+        // The author will store the value of the movies review author
+        var author;
+
+        // The movieReview will store the value of the movies review
+        var movieReview;
+
         // The posterPath will store the first half if movie image path
         // The poster path returned from the Get AJAX Get route will concat to this path
         var posterPath = 'https://image.tmdb.org/t/p/w500';
@@ -79,10 +85,13 @@ $(document).ready(() => {
         // Assigning the movieId variable the key movieId which stores the movie id value
         movieId = sessionStorage.getItem('movieId');
 
-
         $.get('https://api.themoviedb.org/3/movie/' + movieId + '/reviews?api_key=' +
-            apiKey + '=en-US&page=1', (res) => {
-                console.log(res);
+            apiKey + '&language=en-US&page=1'
+            , (data, status) => {
+
+                console.log(res)
+
+
             })
 
     });
