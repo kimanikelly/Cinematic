@@ -89,19 +89,29 @@ $(document).ready(() => {
             apiKey + '&language=en-US&page=1'
             , (data, status) => {
 
-                console.log(res)
+
 
 
             })
 
     });
-    
+
     $('#show-submit').click(() => {
+
+        // The showTitle will store the value of the show title returned from the API search
+        var showTitle;
+        var airDate;
+        var showImagePath = 'https://image.tmdb.org/t/p/w500';
+        var showOverView;
 
         $.get('https://api.themoviedb.org/3/search/tv?api_key=' +
             apiKey + '&language=en-US&page=1&query=Silicon%20Valley&include_adult=false', (res) => {
 
-                console.log(res);
+                console.log(res.results[0]);
+
+                showTitle = res.results[0].name;
+
+                $('#show-title-span').append(showTitle);
             });
     })
 
