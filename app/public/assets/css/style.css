@@ -76,11 +76,11 @@ h3:hover {
     margin-top:8%;
 }
 
-#movie-info-div {
+.info-div {
     margin-top:10%;
 }
 
-#movie-submit {
+.submit {
     font-family: 'Times New Roman', Times, serif;
     font-size:25px;
     text-transform: bold;

@@ -95,6 +95,16 @@ $(document).ready(() => {
             })
 
     });
+    
+    $('#show-submit').click(() => {
+
+        $.get('https://api.themoviedb.org/3/search/tv?api_key=' +
+            apiKey + '&language=en-US&page=1&query=Silicon%20Valley&include_adult=false', (res) => {
+
+                console.log(res);
+            });
+    })
+
 
 
 });
