@@ -98,7 +98,7 @@ $(document).ready(() => {
 
     $('#show-submit').click(() => {
 
-        var showQueryTitle = $('show-query-title').val();
+        var showQueryTitle = $('#show-query-title').val();
 
         // The showTitle will store the value of the show title returned from the API search
         var showTitle;
@@ -110,6 +110,7 @@ $(document).ready(() => {
             apiKey + '&language=en-US&page=1&query=' + showQueryTitle + '&include_adult=false', (res) => {
 
                 console.log(res.results[0]);
+                console.log(showQueryTitle)
 
                 showTitle = res.results[0].name;
 
