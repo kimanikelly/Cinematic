@@ -62,7 +62,7 @@ h3:hover {
     
 }
 
-#movie-query-title {
+.query-title {
     font-size:33px;
     font-family:'Times New Roman', Times, serif;
     margin-top:5px;
@@ -71,7 +71,7 @@ h3:hover {
     font-family:'Times New Roman', Times, serif;
 }
 
-.movie-search-div {
+.search-div {
     margin-left:28%;
     margin-top:8%;
 }
