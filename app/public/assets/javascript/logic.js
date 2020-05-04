@@ -2,8 +2,11 @@
 // Detects the state of the state of the DOM before JavaScript code is executed
 $(document).ready(() => {
 
-    // The undefined apiKey variable will store the value of the apiKey
+    // The undefined apiKey variable will store the value of the api key
     var apiKey;
+
+    // The undefined movieId variable will store the value of the movie id
+    var movieId;
 
     // AJAX Post request to the token route retrieving the api key from the backend
     $.post('/token', (res) => {
@@ -19,7 +22,7 @@ $(document).ready(() => {
 
     // Jquery on click method used to perform the movie search from TMDB API
     $('#movie-submit').click(() => {
-       
+
         // The queryTitle is given the value of the movie name input
         var queryTitle = $('#movie-query-title').val();
 
@@ -51,10 +54,10 @@ $(document).ready(() => {
                 overview = res.results[0].overview;
 
                 // Sets the movie title in the browser page
-                $('#movie-title').html(movieTitle);
+                $('#movie-title-span').html(movieTitle);
 
                 // Sets the release date in the browser page
-                $('#release-date').html(releaseDate);
+                $('#movie-release-span').html(releaseDate);
 
                 // Sets the movie image in the browser page
                 $('img').attr('src', posterPath + res.results[0].poster_path);
@@ -68,7 +71,19 @@ $(document).ready(() => {
                 // Clears the movie input field on click
                 $('#movie-query-title').val("");
 
+                // Stores the movie id as a key/value pair in sessionStorage
+                sessionStorage.setItem('movieId', res.results[0].id);
+
             });
+
+        // Assigning the movieId variable the key movieId which stores the movie id value
+        movieId = sessionStorage.getItem('movieId');
+
+
+        $.get('https://api.themoviedb.org/3/movie/' + movieId + '/reviews?api_key=' +
+            apiKey + '=en-US&page=1', (res) => {
+                console.log(res);
+            })
 
     });
 

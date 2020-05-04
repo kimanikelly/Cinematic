@@ -30,7 +30,6 @@ a:hover {
     text-decoration: none;
 }
 
-
 h3 {
     font-weight: bold;
     font-family:'Times New Roman', Times, serif;
@@ -43,10 +42,12 @@ h2 {
     font-weight: bold;
 }
 
+#overview {
+    margin-top: 10px;
+}
+
 h3:hover {
-    text-decoration: underline;
-    text-decoration-color: lightcoral;
-    color:skyblue;
+    color:rgba(4, 134, 185, 0.877);
 }
 
 .container {
@@ -91,6 +92,10 @@ h3:hover {
     
 }
 
+span {
+    font-style:italic;
+}
+
 #movie-submit:hover {
     color:lightcoral;
 }
@@ -104,6 +109,8 @@ p {
     margin-top: 5%;
     font-family: 'Times New Roman', Times, serif;
     font-size:20px;
+    font-weight: bold;
+    font-style:italic;
 }
 
 #now-playing {
@@ -112,7 +119,7 @@ p {
   }
 
 .footer {
-    border-top:5px solid skyblue;
+    border-top:5px solid lightcoral;
 }
 
 
