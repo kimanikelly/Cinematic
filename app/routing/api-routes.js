@@ -9,5 +9,5 @@ module.exports = function (app) {
     // HTTP Post request to send the apiKey to the front end
     app.post('/token', function (req, res) {
         res.send(apiKey);
-    })
+    });
 }

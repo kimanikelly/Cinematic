@@ -28,7 +28,7 @@ $(document).ready(() => {
 
         // Checks if the movie input field is blank
         if (queryTitle === "") {
-            alert('Movie Input field can not be blank.')
+            alert('Movie Input field can not be blank.');
         }
 
         // The movieTitle will store the value of the movie title returned from the API search
@@ -55,38 +55,52 @@ $(document).ready(() => {
         $.get('https://api.themoviedb.org/3/search/movie?api_key=' +
             apiKey + '&language=en-US&query=' + queryTitle + '&page=1&include_adult=false', (res) => {
 
-                // Sets the value of the movieTitle
-                movieTitle = res.results[0].title;
+                // This block of code is tested whether the movie input is registered in the API database
+                try {
 
-                // Sets the value of the releaseDate
-                releaseDate = res.results[0].release_date;
+                    // Sets the value of the movieTitle
+                    movieTitle = res.results[0].title;
 
-                // Sets the value of the overview
-                overview = res.results[0].overview;
+                    // Sets the value of the releaseDate
+                    releaseDate = res.results[0].release_date;
 
-                // Sets the movie title in the browser page
-                $('#movie-title-span').html(movieTitle);
+                    // Sets the value of the overview
+                    overview = res.results[0].overview;
 
-                // Sets the release date in the browser page
-                $('#movie-release-span').html(releaseDate);
+                    // Sets the movie title in the browser page
+                    $('#movie-title-span').html(movieTitle);
 
-                // Sets the movie image in the browser page
-                $('img').attr('src', posterPath + res.results[0].poster_path);
+                    // Sets the release date in the browser page
+                    $('#movie-release-span').html(releaseDate);
 
-                // Sets the border of the image
-                $('img').css('border', '2px solid black');
+                    // Sets the movie image in the browser page
+                    $('img').attr('src', posterPath + res.results[0].poster_path);
 
-                // Sets the movie overview in the browser page
-                $('#movie-overview').html(overview);
+                    // Sets the border of the image
+                    $('img').css('border', '2px solid black');
 
-                // Clears the movie input field on click
-                $('#movie-query-title').val("");
+                    // Sets the movie overview in the browser page
+                    $('#movie-overview').html(overview);
 
-                // Stores the movie id as a key/value pair in sessionStorage
-                sessionStorage.setItem('movieId', res.results[0].id);
+                    // Clears the movie input field on click
+                    $('#movie-query-title').val("");
 
-                // Assigning the movieId variable the key movieId which stores the movie id value
-                movieId = sessionStorage.getItem('movieId');
+                    // Stores the movie id as a key/value pair in sessionStorage
+                    sessionStorage.setItem('movieId', res.results[0].id);
+
+                    // Assigning the movieId variable the key movieId which stores the movie id value
+                    movieId = sessionStorage.getItem('movieId');
+
+                    console.log(res.results[0])
+                    // Handles the error if the movie entered is not in the API database
+
+                } catch (err) {
+
+                    alert('Sorry your input was not valid with The Movie Database.');
+
+                    $('#movie-query-title').val('');
+
+                }
 
                 // AJAX Get request to search for a movie review
                 // The apiKey and movieId variables are used to complete the query string
