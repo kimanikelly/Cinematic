@@ -105,6 +105,7 @@ $(document).ready(() => {
                 // AJAX Get request to search for a movie review
                 // The apiKey and movieId variables are used to complete the query string
                 $.get('https://api.themoviedb.org/3/movie/' + movieId + '/reviews?api_key=' +
+
                     apiKey + '&language=en-US&page=1'
                     , (data, status) => {
 
@@ -130,6 +131,40 @@ $(document).ready(() => {
                         }
 
                     });
+
+                $.get('https://api.themoviedb.org/3/movie/' + movieId + '/credits?api_key=' +
+
+                    apiKey, (res) => {
+
+                        console.log(res.cast[0])
+
+                        for (var i = 0; i < 10; i++) {
+
+                            $('#first-actor').html(res.cast[0].name);
+                            $('#second-actor').html(res.cast[1].name);
+                            $('#third-actor').html(res.cast[2].name);
+                            $('#fourth-actor').html(res.cast[3].name);
+                            $('#fifth-actor').html(res.cast[4].name);
+                            $('#sixth-actor').html(res.cast[5].name);
+                            $('#seventh-actor').html(res.cast[6].name);
+                            $('#eighth-actor').html(res.cast[7].name);
+                            $('#ninth-actor').html(res.cast[8].name);
+                            $('#tenth-actor').html(res.cast[9].name);
+
+
+                            $('#first-role').html(res.cast[0].character);
+                            $('#second-role').html(res.cast[1].character);
+                            $('#third-role').html(res.cast[2].character);
+                            $('#fourth-role').html(res.cast[3].character);
+                            $('#fifth-role').html(res.cast[4].character);
+                            $('#sixth-role').html(res.cast[5].character);
+                            $('#seventh-role').html(res.cast[6].character);
+                            $('#eighth-role').html(res.cast[7].character);
+                            $('#ninth-role').html(res.cast[8].character);
+                            $('#tenth-role').html(res.cast[9].character);
+
+                        }
+                    })
             });
 
     });
@@ -156,18 +191,18 @@ $(document).ready(() => {
         // The showOverview will store thr value of the shows overview
         var showOverview;
 
+        var showId;
+
         // AJAX Get request to search for the show submitted from the input field
         // The apiKey and showQueryTitle variables are used to complete the query string
         $.get('https://api.themoviedb.org/3/search/tv?api_key=' +
             apiKey + '&language=en-US&page=1&query=' + showQueryTitle + '&include_adult=false', (res) => {
 
-                console.log(res.results[0]);
-                console.log(showQueryTitle)
-
                 showTitle = res.results[0].name;
                 airDate = res.results[0].first_air_date;
                 showImage = showImagePath + res.results[0].poster_path;
                 showOverview = res.results[0].overview;
+                showId = res.results[0].id;
 
 
                 $('#show-title-span').html(showTitle);
@@ -178,6 +213,13 @@ $(document).ready(() => {
 
 
                 $('#show-query-title').val('');
+
+                $.get('https://api.themoviedb.org/3/tv/' + showId + '/reviews?api_key=' +
+                    apiKey + '&language=en-US&page=1', (res) => {
+                        console.log(res);
+
+
+                    })
             });
     })
 

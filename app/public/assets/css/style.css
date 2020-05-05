@@ -113,8 +113,18 @@ p {
     font-style:italic;
 }
 
+
+
 .review {
     text-decoration: underline;
+}
+
+#cast {
+    text-decoration: underline;
+}
+
+#cast-div {
+    margin-top: 10%;
 }
 
 .footer {
