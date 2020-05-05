@@ -26,6 +26,11 @@ $(document).ready(() => {
         // The queryTitle is given the value of the movie name input
         var queryTitle = $('#movie-query-title').val();
 
+        // Checks if the movie input field is blank
+        if (queryTitle === "") {
+            alert('Movie Input field can not be blank.')
+        }
+
         // The movieTitle will store the value of the movie title returned from the API search
         var movieTitle;
 

@@ -113,6 +113,10 @@ p {
     font-style:italic;
 }
 
+.review {
+    text-decoration: underline;
+}
+
 .footer {
     border-top:5px solid lightcoral;
     background-image: url('../images/concrete_wall.png');
