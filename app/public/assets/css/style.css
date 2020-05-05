@@ -42,10 +42,6 @@ h2 {
     font-weight: bold;
 }
 
-#overview {
-    margin-top: 10px;
-}
-
 h3:hover {
     color:rgba(4, 134, 185, 0.877);
 }
@@ -69,6 +65,7 @@ h3:hover {
     height:60px;
     width:65%;
     font-family:'Times New Roman', Times, serif;
+    box-shadow: 10px 5px 5px;
 }
 
 .search-div {
@@ -78,6 +75,10 @@ h3:hover {
 
 .info-div {
     margin-top:10%;
+}
+
+.overview {
+    text-decoration: underline;
 }
 
 .submit {
@@ -96,7 +97,7 @@ span {
     font-style:italic;
 }
 
-#movie-submit:hover {
+.submit:hover {
     color:lightcoral;
 }
 
@@ -106,17 +107,11 @@ img {
 }
 
 p {
-    margin-top: 5%;
     font-family: 'Times New Roman', Times, serif;
     font-size:20px;
     font-weight: bold;
     font-style:italic;
 }
-
-#now-playing {
-    height:auto;
-    width:800px;
-  }
 
 .footer {
     border-top:5px solid lightcoral;

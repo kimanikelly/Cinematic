@@ -72,7 +72,7 @@ $(document).ready(() => {
                 $('img').css('border', '2px solid black');
 
                 // Sets the movie overview in the browser page
-                $('#overview').html(overview);
+                $('#movie-overview').html(overview);
 
                 // Clears the movie input field on click
                 $('#movie-query-title').val("");
@@ -80,32 +80,65 @@ $(document).ready(() => {
                 // Stores the movie id as a key/value pair in sessionStorage
                 sessionStorage.setItem('movieId', res.results[0].id);
 
+                // Assigning the movieId variable the key movieId which stores the movie id value
+                movieId = sessionStorage.getItem('movieId');
+
+                // AJAX Get request to search for a movie review
+                // The apiKey and movieId variables are used to complete the query string
+                $.get('https://api.themoviedb.org/3/movie/' + movieId + '/reviews?api_key=' +
+                    apiKey + '&language=en-US&page=1'
+                    , (data, status) => {
+
+                        // This block of code is tested whether the movie returned has review content or not
+                        try {
+
+                            // Stores the value of the movie review content
+                            // Will throw an error code if there arent any reviews
+                            movieReview = data.results[0].content;
+
+                            // Sets the movie review in the browser page
+                            $('#movie-review').html(movieReview);
+
+                            // This block of code is executed and handled if there isnt review content
+                            // Handles the error
+                        } catch (error) {
+
+                            // Sets the text in the movie review section if there isnt review content
+                            $('#movie-review').html('Sorry a review is not available for this movie.');
+
+                            // Aligns the review text
+                            $('#movie-review').css('text-align', 'center');
+                        }
+
+                    });
             });
-
-        // Assigning the movieId variable the key movieId which stores the movie id value
-        movieId = sessionStorage.getItem('movieId');
-
-        $.get('https://api.themoviedb.org/3/movie/' + movieId + '/reviews?api_key=' +
-            apiKey + '&language=en-US&page=1'
-            , (data, status) => {
-
-
-
-
-            })
 
     });
 
+    // Jquery on click method used to perform the tv show search from TMDB API
     $('#show-submit').click(() => {
 
+        // The showQueryTitle is given the value of the show name input
         var showQueryTitle = $('#show-query-title').val();
 
         // The showTitle will store the value of the show title returned from the API search
         var showTitle;
-        var airDate;
-        var showImagePath = 'https://image.tmdb.org/t/p/w500';
-        var showOverView;
 
+        // The airDate will store the value of the first_air_date returned from the API search
+        var airDate;
+
+        // The showImagePath will store the first half if the show image path
+        // The poster_path returned from the AJAX Get request will concat to this path
+        var showImagePath = 'https://image.tmdb.org/t/p/w500';
+
+        // The showImage will store the full poster_path of the show searched
+        var showImage;
+
+        // The showOverview will store thr value of the shows overview
+        var showOverview;
+
+        // AJAX Get request to search for the show submitted from the input field
+        // The apiKey and showQueryTitle variables are used to complete the query string
         $.get('https://api.themoviedb.org/3/search/tv?api_key=' +
             apiKey + '&language=en-US&page=1&query=' + showQueryTitle + '&include_adult=false', (res) => {
 
@@ -114,10 +147,15 @@ $(document).ready(() => {
 
                 showTitle = res.results[0].name;
                 airDate = res.results[0].first_air_date;
+                showImage = showImagePath + res.results[0].poster_path;
+                showOverview = res.results[0].overview;
 
-                $('#show-title-span').append(showTitle);
-                $('#show-air-span').append(airDate);
 
+                $('#show-title-span').html(showTitle);
+                $('#show-air-span').html(airDate);
+                $('#show-image').attr('src', showImage);
+                $('#show-image').css('border', 'solid 2px black');
+                $('#show-overview').html(showOverview);
 
 
                 $('#show-query-title').val('');
