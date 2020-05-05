@@ -3,8 +3,9 @@ body {
 }
 
 
-#cinematic {
+.cinematic {
     text-transform: uppercase;
+    text-align: center;
     font-family:'Times New Roman', Times, serif;
     font-weight: bold;;
     font-size:60px;
@@ -125,6 +126,14 @@ p {
 
 #cast-div {
     margin-top: 10%;
+}
+
+.copyright {
+    color:whitesmoke;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left:41%;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .footer {
