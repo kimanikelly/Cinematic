@@ -50,7 +50,7 @@ h3:hover {
 .container {
     margin-top:5%;
     margin-left:20%;
-    margin-bottom:10%;
+    margin-bottom:246px;
     border:5px solid rgba(4, 134, 185, 0.877);
     height: auto;
     width:800px;
@@ -80,6 +80,7 @@ h3:hover {
 
 .overview {
     text-decoration: underline;
+
 }
 
 .submit {
@@ -90,6 +91,7 @@ h3:hover {
     width:50%;
     margin-top:10px;
     margin-left:8%;
+    margin-bottom:10px;
     background-color: lightslategray;
     
 }
@@ -114,8 +116,6 @@ p {
     font-style:italic;
 }
 
-
-
 .review {
     text-decoration: underline;
 }
@@ -139,6 +139,7 @@ p {
 .footer {
     border-top:5px solid lightcoral;
     background-image: url('../images/concrete_wall.png');
+    margin-top:80px;
 }
 
 

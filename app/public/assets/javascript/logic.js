@@ -2,6 +2,15 @@
 // Detects the state of the state of the DOM before JavaScript code is executed
 $(document).ready(() => {
 
+    // Hides all elements within the cast-div
+    $('#cast-div').hide();
+
+    // Hides all elements within the info-div
+    $('.info-div').hide();
+
+    // Hides all 
+    $('#clear').hide();
+
     // The undefined apiKey variable will store the value of the api key
     var apiKey;
 
@@ -91,7 +100,6 @@ $(document).ready(() => {
                     // Assigning the movieId variable the key movieId which stores the movie id value
                     movieId = sessionStorage.getItem('movieId');
 
-                    console.log(res.results[0])
                     // Handles the error if the movie entered is not in the API database
 
                 } catch (err) {
@@ -136,7 +144,10 @@ $(document).ready(() => {
 
                     apiKey, (res) => {
 
-                        console.log(res.cast[0])
+                        $('#cast-div').show();
+                        $('.info-div').show();
+                        $('#clear').show();
+
 
                         for (var i = 0; i < 10; i++) {
 
@@ -168,6 +179,13 @@ $(document).ready(() => {
             });
 
     });
+
+    $('#clear').click(() => {
+        $('#cast-div').hide();
+        $('.info-div').hide();
+        $('#clear').hide();
+    })
+
 
     // Jquery on click method used to perform the tv show search from TMDB API
     $('#show-submit').click(() => {
