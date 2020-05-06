@@ -9,7 +9,7 @@ $(document).ready(() => {
     $('.info-div').hide();
 
     // Hides all 
-    $('#clear').hide();
+    $('.clear').hide();
 
     // The undefined apiKey variable will store the value of the api key
     var apiKey;
@@ -145,7 +145,7 @@ $(document).ready(() => {
 
                         $('#cast-div').show();
                         $('.info-div').show();
-                        $('#clear').show();
+                        $('.clear').show();
 
                         // Iterates through 10 cast members
                         for (var i = 0; i < 10; i++) {
@@ -180,18 +180,17 @@ $(document).ready(() => {
 
     });
 
-    $('#clear').click(() => {
+    $('.clear').click(() => {
         $('#cast-div').hide();
         $('.info-div').hide();
-        $('#clear').hide();
+        $('.clear').hide();
     })
 
     // Jquery on click method used to perform the tv show search from TMDB API
     $('#show-submit').click(() => {
 
         $('.info-div').show();
-        $('#clear').show();
-
+        $('.clear').show();
 
         // The showQueryTitle is given the value of the show name input
         var showQueryTitle = $('#show-query-title').val();
@@ -224,6 +223,7 @@ $(document).ready(() => {
         $.get('https://api.themoviedb.org/3/search/tv?api_key=' +
             apiKey + '&language=en-US&page=1&query=' + showQueryTitle + '&include_adult=false', (res) => {
 
+                console.log(res.results);
 
                 try {
 
@@ -251,6 +251,11 @@ $(document).ready(() => {
 
                 }
 
+                $.get('https://api.themoviedb.org/3/tv/' + showId + '/recommendations?api_key=' +
+                    apiKey + '&language=en-US&page=1', (res) => {
+
+                        console.log(res)
+                    })
 
             });
     })
