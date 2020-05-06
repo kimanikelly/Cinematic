@@ -101,7 +101,6 @@ $(document).ready(() => {
                     movieId = sessionStorage.getItem('movieId');
 
                     // Handles the error if the movie entered is not in the API database
-
                 } catch (err) {
 
                     alert('Sorry your input was not valid with The Movie Database.');
@@ -148,9 +147,10 @@ $(document).ready(() => {
                         $('.info-div').show();
                         $('#clear').show();
 
-
+                        // Iterates through 10 cast members
                         for (var i = 0; i < 10; i++) {
 
+                            // Sets the cast members name to display in the table
                             $('#first-actor').html(res.cast[0].name);
                             $('#second-actor').html(res.cast[1].name);
                             $('#third-actor').html(res.cast[2].name);
@@ -162,7 +162,7 @@ $(document).ready(() => {
                             $('#ninth-actor').html(res.cast[8].name);
                             $('#tenth-actor').html(res.cast[9].name);
 
-
+                            // Sets the cast members character to display in the table
                             $('#first-role').html(res.cast[0].character);
                             $('#second-role').html(res.cast[1].character);
                             $('#third-role').html(res.cast[2].character);
@@ -186,12 +186,20 @@ $(document).ready(() => {
         $('#clear').hide();
     })
 
-
     // Jquery on click method used to perform the tv show search from TMDB API
     $('#show-submit').click(() => {
 
+        $('.info-div').show();
+        $('#clear').show();
+
+
         // The showQueryTitle is given the value of the show name input
         var showQueryTitle = $('#show-query-title').val();
+
+        // Checks if the tv show input field is blank
+        if (showQueryTitle === "") {
+            alert('Tv show input field can not be blank.');
+        }
 
         // The showTitle will store the value of the show title returned from the API search
         var showTitle;
@@ -216,28 +224,34 @@ $(document).ready(() => {
         $.get('https://api.themoviedb.org/3/search/tv?api_key=' +
             apiKey + '&language=en-US&page=1&query=' + showQueryTitle + '&include_adult=false', (res) => {
 
-                showTitle = res.results[0].name;
-                airDate = res.results[0].first_air_date;
-                showImage = showImagePath + res.results[0].poster_path;
-                showOverview = res.results[0].overview;
-                showId = res.results[0].id;
+
+                try {
+
+                    showTitle = res.results[0].name;
+                    airDate = res.results[0].first_air_date;
+                    showImage = showImagePath + res.results[0].poster_path;
+                    showOverview = res.results[0].overview;
+                    showId = res.results[0].id;
 
 
-                $('#show-title-span').html(showTitle);
-                $('#show-air-span').html(airDate);
-                $('#show-image').attr('src', showImage);
-                $('#show-image').css('border', 'solid 2px black');
-                $('#show-overview').html(showOverview);
+                    $('#show-title-span').html(showTitle);
+                    $('#show-air-span').html(airDate);
+                    $('#show-image').attr('src', showImage);
+                    $('#show-image').css('border', 'solid 2px black');
+                    $('#show-overview').html(showOverview);
 
 
-                $('#show-query-title').val('');
+                    $('#show-query-title').val('');
 
-                $.get('https://api.themoviedb.org/3/tv/' + showId + '/reviews?api_key=' +
-                    apiKey + '&language=en-US&page=1', (res) => {
-                        console.log(res);
+                } catch (err) {
+
+                    alert('Sorry your input was not valid with The Movie Database.');
+
+                    $('#show-query-title').val('');
+
+                }
 
 
-                    })
             });
     })
 
