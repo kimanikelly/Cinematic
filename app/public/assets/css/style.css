@@ -94,7 +94,7 @@ h3:hover {
 .submit {
     font-family: 'Times New Roman', Times, serif;
     font-size:25px;
-    text-transform: bold;
+    font-weight:bold;
     border-radius:20px;
     width:50%;
     margin-top:10px;
@@ -163,10 +163,4 @@ p {
     border-top:5px solid lightcoral;
     background-image: url('../images/concrete_wall.png');
 }
-
-
-
-
-
-
 
