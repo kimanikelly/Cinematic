@@ -87,6 +87,10 @@ h3:hover {
     text-decoration: underline;
 }
 
+#trending-submit {
+    margin-bottom:11%;
+}
+
 .submit {
     font-family: 'Times New Roman', Times, serif;
     font-size:25px;
@@ -95,7 +99,7 @@ h3:hover {
     width:50%;
     margin-top:10px;
     margin-left:8%;
-    margin-bottom:10px;
+    margin-bottom:11%;
     background-color: lightslategray;
     
 }
