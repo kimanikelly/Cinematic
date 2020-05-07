@@ -114,7 +114,7 @@ $(document).ready(() => {
                 // AJAX Get request to search for a movie review
                 // The apiKey and movieId variables are used to complete the query string
                 $.get('https://api.themoviedb.org/3/movie/' + movieId + '/reviews?api_key=' +
-
+                
                     apiKey + '&language=en-US&page=1'
                     , (data, status) => {
 
@@ -236,8 +236,13 @@ $(document).ready(() => {
         $.get('https://api.themoviedb.org/3/search/tv?api_key=' +
             apiKey + '&language=en-US&page=1&query=' + showQueryTitle + '&include_adult=false', (res) => {
 
+                // Shows all elements in the info-div
                 $('.info-div').show();
+
+                // Shows the clear button
                 $('.clear').show();
+
+                // Shows all elements in the table-div
                 $('.table-div').show();
 
                 try {
@@ -259,23 +264,33 @@ $(document).ready(() => {
 
                 } catch (err) {
 
+                    // Alert message appears
                     alert('Sorry your input was not valid with The Movie Database.');
 
+                    // Clears the show input field
                     $('#show-query-title').val('');
 
+                    // Hides all elements in the info-div
                     $('.info-div').hide();
 
+                    // Shows all elements in the table-div
                     $('.table-div').hide();
 
+                    // Shows the clear button
                     $('.clear').hide();
 
                 }
 
+                // AJAX Get request to search for the show recommendations
+                // The apiKey and showId variables are used to complete the query string
                 $.get('https://api.themoviedb.org/3/tv/' + showId + '/recommendations?api_key=' +
                     apiKey + '&language=en-US&page=1', (res) => {
 
+
+                        // Iterates up to 10 shows
                         for (var i = 0; i < 10; i++) {
 
+                            // Sets 10 shows including the show title, show air date, and network name
                             $('#first-show').html(res.results[0].name);
                             $('#first-air-date').html(res.results[0].first_air_date);
                             $('#first-network').html(res.results[0].networks[0].name);
@@ -322,14 +337,19 @@ $(document).ready(() => {
             });
     });
 
+    // AJAX Get request to return the trending movies of the week
+    // The apiKey variable is used to complete the query string
     $('#trending-submit').click(() => {
         $.get('https://api.themoviedb.org/3/trending/movie/week?api_key=' +
-            '298f8376edc729c724953aefad01dbf5', (res) => {
+            apiKey, (res) => {
 
+                // Shows all elements within the table-div
                 $('.table-div').show();
 
+                // Iterates up to 5 trending movies
                 for (var i = 0; i < 5; i++) {
 
+                    // Sets the trending movies title and release date in the table
                     $('#first-trending-movie').html(res.results[0].title);
                     $('#first-trending-date').html(res.results[0].release_date);
 
@@ -350,13 +370,14 @@ $(document).ready(() => {
                     $('#fifth-trending-date').html(res.results[4].release_date);
                 }
 
-
-
+                // Sets the trending movies title and release date in the table
                 $.get('https://api.themoviedb.org/3/trending/tv/week?api_key=' +
                     '298f8376edc729c724953aefad01dbf5', (res) => {
 
+                        // Iterates up to 5 trending shows
                         for (var i = 0; i < 5; i++) {
 
+                            // Sets the trending show title and first air date in the table
                             $('#first-trending-show').html(res.results[0].name);
                             $('#first-trending-air').html(res.results[0].first_air_date);
 
@@ -376,12 +397,7 @@ $(document).ready(() => {
                             $('#fifth-trending-show').html(res.results[4].name);
                             $('#fifth-trending-air').html(res.results[4].first_air_date);
                         }
-                    })
-            })
-
-    })
-
-
-
-
+                    });
+            });
+    });
 });
