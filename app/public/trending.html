@@ -16,6 +16,128 @@
 
 <body>
 
+    <!-- Heading -->
+    <a href='/'>
+        <h1 class='cinematic'>Cinematic</h1>
+    </a>
+    <!-- Heading -->
+
+    <!-- Page Directory -->
+    <div class='container' id='directory'>
+        <div class="row">
+            <div class="col-sm">
+                <a href='/'>
+                    <h3>Movie Search
+                </a></h3>
+            </div>
+            <div class="col-sm">
+                <a href='/shows'>
+                    <h3>Show Search</h3>
+                </a>
+            </div>
+            <div class="col-sm">
+                <a href='/trending'>
+                    <h3>Trending</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Page Directory -->
+
+    <div class='container'>
+        <div class='search-div'>
+            <button type="submit" class="btn btn-primary submit" id='trending-submit'>Search Trending</button>
+            <button type="submit" class="btn btn-primary submit clear">Clear</button>
+        </div>
+
+        <div class='table-div'>
+            <h2 class='trending'>Top 5 Movies of the Week</h2>
+            <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Movie Title</th>
+                        <th>Release Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td id='first-trending-movie'></td>
+                        <td id='first-trending-date'></td>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <td id='second-trending-movie'></td>
+                        <td id='second-trending-date'></td>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <td id='third-trending-movie'></td>
+                        <td id='third-trending-date'></td>
+                    </tr>
+                    <tr>
+                        <th>4</th>
+                        <td id='fourth-trending-movie'></td>
+                        <td id='fourth-trending-date'></td>
+                    </tr>
+                    <tr>
+                        <th>5</th>
+                        <td id='fifth-trending-movie'></td>
+                        <td id='fifth-trending-date'></td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+            <h2 class='trending'>Top 5 Shows of the Week</h2>
+            <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Show Title</th>
+                        <th> First Air Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td id='first-trending-show'></td>
+                        <td id='first-trending-air'></td>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <td id='second-trending-show'></td>
+                        <td id='second-trending-air'></td>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <td id='third-trending-show'></td>
+                        <td id='third-trending-air'></td>
+                    </tr>
+                    <tr>
+                        <th>4</th>
+                        <td id='fourth-trending-show'></td>
+                        <td id='fourth-trending-air'></td>
+                    </tr>
+                    <tr>
+                        <th>5</th>
+                        <td id='fifth-trending-show'></td>
+                        <td id='fifth-trending-air'></td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+
+
+        </div>
+    </div>
+
+    <nav class="navbar footer navbar-light bg-light">
+        <h4 class='copyright'>Copyright &copy; 2020</h4>
+    </nav>
+
 </body>
 
 </html>

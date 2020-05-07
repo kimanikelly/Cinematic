@@ -2,17 +2,14 @@
 // Detects the state of the state of the DOM before JavaScript code is executed
 $(document).ready(() => {
 
-    // Hides all elements within the cast-div
-    $('#cast-div').hide();
-
     // Hides all elements within the info-div
     $('.info-div').hide();
 
     // Hides the clear buttons
     $('.clear').hide();
 
-    // Hides the recommendation div
-    $('#recommendation-div').hide();
+    // Hides all elements within the table-div
+    $('.table-div').hide();
 
     // The undefined apiKey variable will store the value of the api key
     var apiKey;
@@ -149,8 +146,8 @@ $(document).ready(() => {
 
                     apiKey, (res) => {
 
-                        // Shows the cast-div
-                        $('#cast-div').show();
+                        // Shows elements within the table-div
+                        $('.table-div').show();
 
                         // Shows the info-div
                         $('.info-div').show();
@@ -194,14 +191,11 @@ $(document).ready(() => {
     //  Jquery click function targeted at he clear button
     $('.clear').click(() => {
 
-        // Hides the cast-div
-        $('#cast-div').hide();
-
         // Hides the info div
         $('.info-div').hide();
 
-        // Hides the recommendation-div
-        $('#recommendation-div').hide();
+        // Hides all elements within the table-div
+        $('.table-div').hide();
 
         // Hides the clear button
         $('.clear').hide();
@@ -244,8 +238,7 @@ $(document).ready(() => {
 
                 $('.info-div').show();
                 $('.clear').show();
-                $('#recommendation-div').show();
-
+                $('.table-div').show();
 
                 try {
 
@@ -272,7 +265,7 @@ $(document).ready(() => {
 
                     $('.info-div').hide();
 
-                    $('#recommendation-div').hide();
+                    $('.table-div').hide();
 
                     $('.clear').hide();
 
@@ -327,6 +320,68 @@ $(document).ready(() => {
                     })
 
             });
+    });
+
+    $('#trending-submit').click(() => {
+        $.get('https://api.themoviedb.org/3/trending/movie/week?api_key=' +
+            '298f8376edc729c724953aefad01dbf5', (res) => {
+
+                $('.table-div').show();
+
+                for (var i = 0; i < 5; i++) {
+
+                    $('#first-trending-movie').html(res.results[0].title);
+                    $('#first-trending-date').html(res.results[0].release_date);
+
+
+                    $('#second-trending-movie').html(res.results[1].title);
+                    $('#second-trending-date').html(res.results[1].release_date);
+
+
+                    $('#third-trending-movie').html(res.results[2].title);
+                    $('#third-trending-date').html(res.results[2].release_date);
+
+
+                    $('#fourth-trending-movie').html(res.results[3].title);
+                    $('#fourth-trending-date').html(res.results[3].release_date);
+
+
+                    $('#fifth-trending-movie').html(res.results[4].title);
+                    $('#fifth-trending-date').html(res.results[4].release_date);
+                }
+
+
+
+                $.get('https://api.themoviedb.org/3/trending/tv/week?api_key=' +
+                    '298f8376edc729c724953aefad01dbf5', (res) => {
+
+                        for (var i = 0; i < 5; i++) {
+
+                            $('#first-trending-show').html(res.results[0].name);
+                            $('#first-trending-air').html(res.results[0].first_air_date);
+
+
+                            $('#second-trending-show').html(res.results[1].name);
+                            $('#second-trending-air').html(res.results[1].first_air_date);
+
+
+                            $('#third-trending-show').html(res.results[2].name);
+                            $('#third-trending-air').html(res.results[2].first_air_date);
+
+
+                            $('#fourth-trending-show').html(res.results[3].name);
+                            $('#fourth-trending-air').html(res.results[3].first_air_date);
+
+
+                            $('#fifth-trending-show').html(res.results[4].name);
+                            $('#fifth-trending-air').html(res.results[4].first_air_date);
+                        }
+                    })
+            })
+
     })
+
+
+
 
 });
