@@ -22,6 +22,7 @@ require('./app/routing/html-routes')(app);
 // Allows express to access/serve the static files
 app.use(express.static(__dirname + '/app/public'));
 
+
 // Starts the server running on the defined port
 app.listen(PORT, function () {
     console.log("Express server running on port: " + PORT);
