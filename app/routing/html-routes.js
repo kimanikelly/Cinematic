@@ -10,8 +10,13 @@ module.exports = function (app) {
     });
 
     // GET route used to render shows.html
-    app.get('/shows',function(req,res){
+    app.get('/shows', function (req, res) {
         res.sendFile(path.join(__dirname, '../public/shows.html'));
-    })
+    });
+
+    // GET route used to render trending.html
+    app.get('/trending', function (req, res) {
+        res.sendFile(path.join(__dirname, '../public/trending.html'));
+    });
 
 }
