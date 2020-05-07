@@ -8,8 +8,11 @@ $(document).ready(() => {
     // Hides all elements within the info-div
     $('.info-div').hide();
 
-    // Hides all 
+    // Hides the clear buttons
     $('.clear').hide();
+
+    // Hides the recommendation div
+    $('#recommendation-div').hide();
 
     // The undefined apiKey variable will store the value of the api key
     var apiKey;
@@ -103,8 +106,10 @@ $(document).ready(() => {
                     // Handles the error if the movie entered is not in the API database
                 } catch (err) {
 
+                    // Alert the page when a undefined movie was input
                     alert('Sorry your input was not valid with The Movie Database.');
 
+                    // Clears the movie input field
                     $('#movie-query-title').val('');
 
                 }
@@ -139,12 +144,18 @@ $(document).ready(() => {
 
                     });
 
+                // AJAX Get request to return movie credits
                 $.get('https://api.themoviedb.org/3/movie/' + movieId + '/credits?api_key=' +
 
                     apiKey, (res) => {
 
+                        // Shows the cast-div
                         $('#cast-div').show();
+
+                        // Shows the info-div
                         $('.info-div').show();
+
+                        // Shows the clear button
                         $('.clear').show();
 
                         // Iterates through 10 cast members
@@ -180,17 +191,24 @@ $(document).ready(() => {
 
     });
 
+    //  Jquery click function targeted at he clear button
     $('.clear').click(() => {
+
+        // Hides the cast-div
         $('#cast-div').hide();
+
+        // Hides the info div
         $('.info-div').hide();
+
+        // Hides the recommendation-div
+        $('#recommendation-div').hide();
+
+        // Hides the clear button
         $('.clear').hide();
     })
 
     // Jquery on click method used to perform the tv show search from TMDB API
     $('#show-submit').click(() => {
-
-        $('.info-div').show();
-        $('.clear').show();
 
         // The showQueryTitle is given the value of the show name input
         var showQueryTitle = $('#show-query-title').val();
@@ -213,9 +231,10 @@ $(document).ready(() => {
         // The showImage will store the full poster_path of the show searched
         var showImage;
 
-        // The showOverview will store thr value of the shows overview
+        // The showOverview will store the value of the shows overview
         var showOverview;
 
+        // The showId will store the value of the shows id
         var showId;
 
         // AJAX Get request to search for the show submitted from the input field
@@ -223,24 +242,26 @@ $(document).ready(() => {
         $.get('https://api.themoviedb.org/3/search/tv?api_key=' +
             apiKey + '&language=en-US&page=1&query=' + showQueryTitle + '&include_adult=false', (res) => {
 
-                console.log(res.results);
+                $('.info-div').show();
+                $('.clear').show();
+                $('#recommendation-div').show();
+
 
                 try {
 
+                    // Sets the variable values
                     showTitle = res.results[0].name;
                     airDate = res.results[0].first_air_date;
                     showImage = showImagePath + res.results[0].poster_path;
                     showOverview = res.results[0].overview;
                     showId = res.results[0].id;
 
-
+                    // Sets the show information in the browser
                     $('#show-title-span').html(showTitle);
                     $('#show-air-span').html(airDate);
                     $('#show-image').attr('src', showImage);
                     $('#show-image').css('border', 'solid 2px black');
                     $('#show-overview').html(showOverview);
-
-
                     $('#show-query-title').val('');
 
                 } catch (err) {
@@ -249,17 +270,63 @@ $(document).ready(() => {
 
                     $('#show-query-title').val('');
 
+                    $('.info-div').hide();
+
+                    $('#recommendation-div').hide();
+
+                    $('.clear').hide();
+
                 }
 
                 $.get('https://api.themoviedb.org/3/tv/' + showId + '/recommendations?api_key=' +
                     apiKey + '&language=en-US&page=1', (res) => {
 
-                        console.log(res)
+                        for (var i = 0; i < 10; i++) {
+
+                            $('#first-show').html(res.results[0].name);
+                            $('#first-air-date').html(res.results[0].first_air_date);
+                            $('#first-network').html(res.results[0].networks[0].name);
+
+                            $('#second-show').html(res.results[1].name);
+                            $('#second-air-date').html(res.results[1].first_air_date);
+                            $('#second-network').html(res.results[1].networks[0].name);
+
+                            $('#third-show').html(res.results[2].name);
+                            $('#third-air-date').html(res.results[2].first_air_date);
+                            $('#third-network').html(res.results[2].networks[0].name);
+
+                            $('#fourth-show').html(res.results[3].name);
+                            $('#fourth-air-date').html(res.results[3].first_air_date);
+                            $('#fourth-network').html(res.results[3].networks[0].name);
+
+                            $('#fifth-show').html(res.results[4].name);
+                            $('#fifth-air-date').html(res.results[4].first_air_date);
+                            $('#fifth-network').html(res.results[0].networks[0].name);
+
+                            $('#sixth-show').html(res.results[5].name);
+                            $('#sixth-air-date').html(res.results[5].first_air_date);
+                            $('#sixth-network').html(res.results[5].networks[0].name);
+
+                            $('#seventh-show').html(res.results[6].name);
+                            $('#seventh-air-date').html(res.results[6].first_air_date);
+                            $('#seventh-network').html(res.results[6].networks[0].name);
+
+                            $('#eighth-show').html(res.results[7].name);
+                            $('#eighth-air-date').html(res.results[7].first_air_date);
+                            $('#eighth-network').html(res.results[7].networks[0].name);
+
+                            $('#ninth-show').html(res.results[8].name);
+                            $('#ninth-air-date').html(res.results[8].first_air_date);
+                            $('#ninth-network').html(res.results[8].networks[0].name);
+
+                            $('#tenth-show').html(res.results[9].name);
+                            $('#tenth-air-date').html(res.results[9].first_air_date);
+                            $('#tenth-network').html(res.results[9].networks[0].name);
+
+                        }
                     })
 
             });
     })
-
-
 
 });

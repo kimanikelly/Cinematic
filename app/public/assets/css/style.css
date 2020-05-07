@@ -124,8 +124,18 @@ p {
     text-decoration: underline;
 }
 
+#show-recommendations {
+    text-decoration: underline;
+}
+
 #cast-div {
     margin-top: 10%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#recommendation-div {
+    margin-top: 10%;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .copyright {
