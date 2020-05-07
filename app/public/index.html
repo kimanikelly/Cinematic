@@ -27,8 +27,8 @@
         <div class="row">
             <div class="col-sm">
                 <a href='/'>
-                    <h3>Movie Search
-                </a></h3>
+                    <h3>Movie Search</h3>
+                </a>
             </div>
             <div class="col-sm">
                 <a href='/shows'>
@@ -46,17 +46,21 @@
 
     <!-- Movie Search -->
     <div class='container'>
+
+        <!-- Search Div -->
         <div class='search-div'>
             <input type="text" class="form-control query-title" id="movie-query-title" placeholder="Search movie...">
             <button type="submit" class="btn btn-primary submit" id='movie-submit'>Submit</button>
             <button type="submit" class="btn btn-primary submit clear">Clear</button>
-
         </div>
+        <!-- Search Div -->
 
+
+        <!-- Info Div -->
         <div class='info-div'>
-            <h2 id='movie-title' class=>Movie Title:&nbsp;<span id='movie-title-span'></span></h2>
+            <h2 id='movie-title'>Movie Title:&nbsp;<span id='movie-title-span'></span></h2>
             <h2 id='release-date'>Release Date:&nbsp;<span id='movie-release-span'></span></h2>
-            <img id='movie' src='' />
+            <img id='movie' src='' alt='movie poster image' />
             <h2 class='overview'>Overview</h2>
             <p id='movie-overview'></p>
 
@@ -130,18 +134,16 @@
 
                 </table>
             </div>
-
-
         </div>
+        <!-- Info Div -->
     </div>
     <!-- Movie Search -->
 
-
+    <!-- Footer -->
     <nav class="navbar footer navbar-light bg-light">
-
         <h4 class='copyright'>Copyright &copy; 2020</h4>
-
     </nav>
+    <!-- Footer -->
 </body>
 
 </html>
