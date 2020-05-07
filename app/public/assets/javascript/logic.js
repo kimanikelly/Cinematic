@@ -26,6 +26,7 @@ $(document).ready(() => {
 
     });
 
+
     // Assigning the apiKey variable the key token which stores the api key value
     apiKey = sessionStorage.getItem('token');
 
@@ -114,7 +115,7 @@ $(document).ready(() => {
                 // AJAX Get request to search for a movie review
                 // The apiKey and movieId variables are used to complete the query string
                 $.get('https://api.themoviedb.org/3/movie/' + movieId + '/reviews?api_key=' +
-                
+
                     apiKey + '&language=en-US&page=1'
                     , (data, status) => {
 
