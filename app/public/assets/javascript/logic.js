@@ -1,5 +1,8 @@
 
-// Detects the state of the state of the DOM before JavaScript code is executed
+// $(document).ready() detects the state of the of the DOM before JavaScript code is executed
+// The async option allows you to write promise based code that appears synchronous
+// The async option tells $(document).ready() before any JavaScript code is executed we need to await
+// a promise response from ajax.
 $(document).ready(async () => {
 
     // Hides all elements within the info-div
@@ -17,21 +20,28 @@ $(document).ready(async () => {
     // The undefined movieId variable will store the value of the movie id
     var movieId;
 
-    // // AJAX Post request to the token route retrieving the api key from the backend
-    // $.post('/token', (res) => {
+    // The post request to return TMDB Api token from the back end stored in the variable getToken
+    // The await option keeps JavaScript from executing before the successful promise is returned
+    // A promise represents the completion or failure of asynchronous operation
+    var getToken = await $.post('/token')
 
-    //     // Stores the api key as a key/value pair in sessionStorage
-    //     // Stores the api key for one session and is deleted after the browser tab is closed
-    //     sessionStorage.setItem('token', res);
+        // .then() method returns the promise
+        // The callback arrow function (res)=> for a successful return 
+        .then((res) => {
 
-    // });
-    // // Assigning the apiKey variable the key token which stores the api key value
-    // apiKey = sessionStorage.getItem('token');
+            // Stores TMBD api key as a key/value pair in sessionStorage
+            // Stores TMBD api key for one session and is deleted after the browser tab is closed
+            sessionStorage.setItem('token', res);
 
-    var getToken = await $.post('/token').then((res) => {
-        sessionStorage.setItem('token', res);
-        apiKey = sessionStorage.getItem('token');
-    });
+            // Assigning the apiKey variable the value of TMDB api key in sessionStorage
+            apiKey = sessionStorage.getItem('token');
+        })
+
+        // .then() method returns the promise
+        // The callback arrow function (err)=> for a failure return 
+        .catch((err) => {
+            console.log(err);
+        });
 
     // Jquery on click method used to perform the movie search from TMDB API
     $('#movie-submit').click(() => {
