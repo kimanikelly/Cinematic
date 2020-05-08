@@ -1,6 +1,6 @@
 
 // Detects the state of the state of the DOM before JavaScript code is executed
-$(document).ready(() => {
+$(document).ready(async () => {
 
     // Hides all elements within the info-div
     $('.info-div').hide();
@@ -17,18 +17,23 @@ $(document).ready(() => {
     // The undefined movieId variable will store the value of the movie id
     var movieId;
 
-    // AJAX Post request to the token route retrieving the api key from the backend
-    $.post('/token', (res) => {
+    // // AJAX Post request to the token route retrieving the api key from the backend
+    // $.post('/token', (res) => {
 
-        // Stores the api key as a key/value pair in sessionStorage
-        // Stores the api key for one session and is deleted after the browser tab is closed
+    //     // Stores the api key as a key/value pair in sessionStorage
+    //     // Stores the api key for one session and is deleted after the browser tab is closed
+    //     sessionStorage.setItem('token', res);
+
+    // });
+    // // Assigning the apiKey variable the key token which stores the api key value
+    // apiKey = sessionStorage.getItem('token');
+
+    var getToken = await $.post('/token').then((res) => {
         sessionStorage.setItem('token', res);
-
+        apiKey = sessionStorage.getItem('token');
     });
 
-
-    // Assigning the apiKey variable the key token which stores the api key value
-    apiKey = sessionStorage.getItem('token');
+    console.log(apiKey);
 
     // Jquery on click method used to perform the movie search from TMDB API
     $('#movie-submit').click(() => {
