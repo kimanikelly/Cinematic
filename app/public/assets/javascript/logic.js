@@ -33,8 +33,6 @@ $(document).ready(async () => {
         apiKey = sessionStorage.getItem('token');
     });
 
-    console.log(apiKey);
-
     // Jquery on click method used to perform the movie search from TMDB API
     $('#movie-submit').click(() => {
 
