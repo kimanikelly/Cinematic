@@ -2,7 +2,6 @@ body {
     background-image: url('../images/ep_naturalblack.png');
 }
 
-
 .cinematic {
     text-transform: uppercase;
     text-align: center;
@@ -14,13 +13,15 @@ body {
 
 }
 
-#directory {
-    margin-top:2%;
-    margin-left:24%;
-    margin-bottom:0;
-    border:none;
-    height:0;
+.nav-item {
+    font-size:34px;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+    color:whitesmoke;
+}
 
+.nav {
+    margin:auto;
 }
 
 a {
@@ -165,11 +166,8 @@ p {
 }
 
 
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}
+@media only screen and (min-width : 320px) and (max-width:568px) {
 
-@media only screen and (max-width:980px) {
-    
+
+}
+ 

@@ -14,39 +14,34 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- style.css -->
     <link rel='stylesheet' type='text/css' href='./assets/css/style.css'>
+
 </head>
 
 <body>
 
-    <!-- Heading -->
+    <!-- Cinematic Heading -->
     <a href='/'>
         <h1 class='cinematic'>Cinematic</h1>
     </a>
-    <!-- Heading -->
+    <!-- Cinematic Heading -->
 
-    <!-- Page Directory -->
-    <div class='container' id='directory'>
-        <div class="row">
-            <div class="col-sm">
-                <a href='/'>
-                    <h3>Movie Search</h3>
-                </a>
-            </div>
-            <div class="col-sm">
-                <a href='/shows'>
-                    <h3>Show Search</h3>
-                </a>
-            </div>
-            <div class="col-sm">
-                <a href='/trending'>
-                    <h3>Trending</h3>
-                </a>
-            </div>
-        </div>
+    <!-- Bootstrap Nav -->
+    <div class='nav'>
+        <ul class="nav nav-fill">
+            <li class="nav-item">
+                <a class="nav-link active" href="/">Movie Search</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/shows">Show Search</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/trending">Trending</a>
+            </li>
+        </ul>
     </div>
-    <!-- Page Directory -->
+    <!-- Bootstrap Nav -->
 
-    <!-- Movie Search -->
+    <!-- Bootstrap container -->
     <div class='container'>
 
         <!-- Search Div -->
@@ -139,10 +134,10 @@
         </div>
         <!-- Info Div -->
     </div>
-    <!-- Movie Search -->
+    <!-- Bootstrap container -->
 
     <!-- Footer -->
-    <nav class="navbar footer navbar-light bg-light">
+    <nav class="navbar fixed-bottom footer navbar-light bg-light">
         <h4 class='copyright'>Copyright &copy; 2020</h4>
     </nav>
     <!-- Footer -->
