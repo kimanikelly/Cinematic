@@ -169,8 +169,13 @@ p {
 @media only screen and (min-width : 320px) and (max-width:568px) {
 
     /* index.html */
+
+    .cinematic {
+        font-size:35px;
+    }
+
     .nav-item {
-        font-size:24px;
+        font-size:20px;
     }
 
     .container {
@@ -202,5 +207,10 @@ p {
     }
     /* index.html */
 
+}
+
+
+@media only screen and (min-width : 375x) and (max-width:667px) { 
+    
 }
  
