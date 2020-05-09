@@ -166,22 +166,22 @@ p {
 }
 
 
-@media only screen and (min-width : 320px) and (max-width:568px) and (orientation : portrait) {
+@media only screen and (min-width : 320px) and (max-width:568px) {
 
     /* index.html */
 
     .cinematic {
-        font-size:35px;
+        font-size:38px;
     }
 
     .nav-item {
-        font-size:20px;
+        font-size:14px;
     }
 
     .container {
-        width:430px;
+        width:300px;
         margin:auto;
-        margin-top:8%;
+        margin-top:10%;
         margin-bottom:20%;
         height:auto;
     }
@@ -192,20 +192,27 @@ p {
         font-size:30px;
     }
 
+    h2 {
+        font-size:20px;
+    }
+
     .search-div {
-        margin-left:20%;
+        margin-left:0;
     }
 
     .submit {
-        margin-left:16%;
+        margin-left:28%;
     }
 
     img {
-        margin-left:14%;
+        margin-left:5%;
+        width:100px;
+        height:auto;
     }
     
     .copyright {
-        margin-left:28%;
+        margin-left:20%;
+        font-size:10px;
     }
     /* index.html */
 
