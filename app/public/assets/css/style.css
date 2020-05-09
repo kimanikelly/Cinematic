@@ -168,6 +168,39 @@ p {
 
 @media only screen and (min-width : 320px) and (max-width:568px) {
 
+    /* index.html */
+    .nav-item {
+        font-size:24px;
+    }
+
+    .container {
+        width:450px;
+        margin:auto;
+        margin-top:8%;
+        margin-bottom:20%;
+        height:auto;
+    }
+
+    .query-title {
+        width:260px;
+    }
+
+    .search-div {
+        margin-left:20%;
+    }
+
+    .submit {
+        margin-left:16%;
+    }
+
+    img {
+        margin-left:14%;
+    }
+    
+    .copyright {
+        margin-left:30%;
+    }
+    /* index.html */
 
 }
  
