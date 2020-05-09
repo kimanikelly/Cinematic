@@ -188,6 +188,8 @@ p {
 
     .query-title {
         width:260px;
+        height:50px;
+        font-size:30px;
     }
 
     .search-div {
