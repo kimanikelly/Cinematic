@@ -357,6 +357,11 @@ p {
  /* Iphone X portrait mode */
  @media only screen and (min-width: 375px) and (max-width:812px) and (orientation : portrait) {
 
+    img {
+        height: auto;
+        margin-left:18% !important;
+    }
+
     #trending-submit {
         margin-left:19%;
     }
