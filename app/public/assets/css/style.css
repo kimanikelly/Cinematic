@@ -261,4 +261,28 @@ p {
  /* index.html */
  /* Iphone 5 landscape mode*/
 }
+
+
+@media only screen and (min-width: 375px) and (max-width : 667px) and (orientation : portrait ) {
+
+    .nav-item {
+        font-size:28px;
+    }
+
+    tr {
+        font-size:14px;
+    }
+
+    .copyright {
+        margin-left:25%;
+    }
+}
+
+@media only screen and (min-width: 375px) and (max-width : 667px) and (orientation : landscape) {
+    .container {
+        margin-bottom:20%;
+    }
+  
+}
+ 
  
