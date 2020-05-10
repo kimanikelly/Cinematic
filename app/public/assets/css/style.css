@@ -224,7 +224,8 @@ p {
 
 }
 
-
+ /* index.html */
+ /* Iphone 5 landscape mode*/
 @media only screen and (min-width : 320px) and (max-width:568px) and (orientation : landscape) { 
     .nav-item {
         font-size:26px;
@@ -236,13 +237,28 @@ p {
         width:450px;
     }
 
+    .search-div {
+        margin-left:18%;
+    }
+
     .query-title {
-        width:300px;
+        width:280px;
+        font-size:26px;
     }
 
     img {
-        width:150px;
-        margin-left:15%;
+        width:190px;
+        margin-left:27%;
     }
+
+    .submit {
+        margin-left:16%;
+    }
+
+    .copyright {
+        margin-left:168px;
+    }
+ /* index.html */
+ /* Iphone 5 landscape mode*/
 }
  
