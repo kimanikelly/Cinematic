@@ -208,6 +208,11 @@ p {
         font-size:18px;
     }
 
+    #trending-submit {
+        width:200px;
+        margin-left:12%;
+    }
+
     img {
         margin-left:18%;
         width:170px;
@@ -251,6 +256,11 @@ p {
 
     .submit {
         margin-left:16%;
+    }
+
+    #trending-submit {
+        width:250px;
+        margin-left:4%;
     }
 
     .copyright {
@@ -312,5 +322,38 @@ p {
     }
 }
  /* Iphone 6/7/8 landscape mode */
+
+
+/* Iphone 6/7/8 plus portrait mode */
+ @media only screen and (min-width:414px) and (max-width:736px) and (orientation :portrait) {
+
+    #trending-submit {
+        margin-left:18%;
+    }
+ }
+ /* Iphone 6/7/8 plus portrait mode */
+
+
+ /* Iphone 6/7/8 plus landscape mode */
+ @media only screen and (min-width:414px) and (max-width:736px) and (orientation : landscape) {
+
+    .container {
+        margin:auto;
+        margin-bottom:20%;
+    }
+
+    img {
+        width:190px;
+        height:auto;
+        margin-left:32% !important;
+    }
+
+    .copyright {
+        margin:auto;
+    }
+ }
+ /* Iphone 6/7/8 plus landscape mode */
+
+
  
  
