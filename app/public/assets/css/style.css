@@ -168,7 +168,6 @@ p {
 
 @media only screen and (min-width : 320px) and (max-width:568px) and (orientation : portrait) {
 
-    /* index.html */
     /* Iphone 5 portrait mode  */
     .cinematic {
         font-size:38px;
@@ -219,12 +218,10 @@ p {
         margin-left:20%;
         font-size:20px;
     }
-    /* index.html */
-    /* Iphone 5 portrait mode */
-
+    
 }
+/* Iphone 5 portrait mode */
 
- /* index.html */
  /* Iphone 5 landscape mode*/
 @media only screen and (min-width : 320px) and (max-width:568px) and (orientation : landscape) { 
     .nav-item {
@@ -242,13 +239,14 @@ p {
     }
 
     .query-title {
-        width:280px;
-        font-size:26px;
+        width:260px;
+        font-size:30px;
     }
 
     img {
         width:190px;
-        margin-left:27%;
+        margin-left:27% !important;
+
     }
 
     .submit {
@@ -258,12 +256,24 @@ p {
     .copyright {
         margin-left:168px;
     }
- /* index.html */
- /* Iphone 5 landscape mode*/
 }
+ /* Iphone 5 landscape mode*/
 
-
+ /* Iphone 6/7/8 portrait mode */
 @media only screen and (min-width: 375px) and (max-width : 667px) and (orientation : portrait ) {
+
+    .container {
+        width:344px;
+    }
+
+    .query-title {
+        width:280px;
+        margin:auto;
+    }
+
+    img {
+        margin-left:22%;
+    }
 
     .nav-item {
         font-size:28px;
@@ -277,12 +287,30 @@ p {
         margin-left:25%;
     }
 }
+ /* Iphone 6/7/8 portrait mode */
 
+ /* Iphone 6/7/8 landscape mode */
 @media only screen and (min-width: 375px) and (max-width : 667px) and (orientation : landscape) {
     .container {
+        margin:auto;
         margin-bottom:20%;
     }
-  
+
+    .query-title {
+        width: 260px;
+    }
+
+    img {
+        width:190px;
+        margin-left:31%;
+        height:auto;
+
+    }
+
+    .copyright {
+        margin:auto;
+    }
 }
+ /* Iphone 6/7/8 landscape mode */
  
  
