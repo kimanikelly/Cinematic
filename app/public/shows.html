@@ -23,6 +23,7 @@
     </a>
     <!-- Heading -->
 
+    <!-- Bootstrap Nav -->
     <div class='nav'>
         <ul class="nav nav-fill">
             <li class="nav-item">
@@ -36,15 +37,20 @@
             </li>
         </ul>
     </div>
+    <!-- Bootstrap Nav -->
 
+    <!-- Bootstrap container -->
     <div class='container'>
+
+        <!-- search-div -->
         <div class='search-div'>
             <input type="text" class="form-control query-title" id="show-query-title" placeholder="Search show...">
             <button type="submit" class="btn btn-primary submit" id='show-submit'>Submit</button>
             <button type="submit" class="btn btn-primary submit clear">Clear</button>
         </div>
+        <!-- search-div -->
 
-
+        <!-- info-div -->
         <div class='info-div'>
             <h2 id='show-title'>Show Title:&nbsp;<span id='show-title-span'></span></h2>
             <h2 id='air-date'>Air Date:&nbsp;<span id='show-air-span'></span></h2>
@@ -52,10 +58,14 @@
             <h2 class='overview'>Overview</h2>
             <p id='show-overview'></p>
         </div>
+        <!-- info-div -->
 
-
+        <!-- table-div -->
         <div class='table-div'>
+
             <h2 id='show-recommendations'>Show Recommendations</h2>
+
+            <!-- show-recommendations-table -->
             <table class="table table-hover table-dark">
                 <thead>
                     <tr>
@@ -127,18 +137,19 @@
                         <td id='tenth-air-date'></td>
                         <td id='tenth-network'></td>
                     </tr>
-
                 </tbody>
-
             </table>
+            <!-- show-recommendations-table -->
         </div>
-
-
+        <!-- table-div -->
     </div>
+    <!-- Bootstrap container -->
 
+    <!-- Bootstrap footer -->
     <nav class="navbar fixed-bottom footer navbar-light bg-light">
         <h4 class='copyright'>Copyright &copy; 2020</h4>
     </nav>
+    <!-- Bootstrap footer -->
 </body>
 
 </html>
